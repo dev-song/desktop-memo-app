@@ -1,0 +1,12 @@
+{
+  "name": "desktop-memo-app",
+  "version": "1.0.0",
+  "description": "Memo app for the desktop",
+  "main": "index.js",
+  "repository": "https://github.com/dev-song/desktop-memo-app.git",
+  "author": "dev-song <52951039+dev-song@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^10.1.5"
+  }
+}
