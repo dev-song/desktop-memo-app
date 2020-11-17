@@ -10,6 +10,12 @@ function createWindow() {
     }
   });
 
+  const preMemo = readMemo(data => {
+    win.webContents.on('did-finish-load', () => {
+      win.webContents.send('ping', data);
+    })
+  });
+
   win.loadFile('index.html');
   win.webContents.openDevTools();
 }

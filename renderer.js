@@ -11,6 +11,8 @@ function sendForm(event) {
 function init() {
   const FORM = document.querySelector('.memo--form');
   FORM.addEventListener('submit', sendForm);
+
+  ipcRenderer.on('ping', (e, msg) => console.log(msg));
 }
 
 document.addEventListener('DOMContentLoaded', init);
