@@ -1,5 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
-const { saveFile } = require('./lib/crud');
+const { saveMemo, readMemo } = require('./lib/crud');
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -15,7 +15,7 @@ function createWindow() {
 }
 
 ipcMain.on('form-submission', (e, data) => {
-  saveFile(data);
+  saveMemo(data);
 })
 
 app.whenReady().then(createWindow);
