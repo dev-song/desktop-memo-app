@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -12,6 +12,10 @@ function createWindow() {
   win.loadFile('index.html');
   win.webContents.openDevTools();
 }
+
+ipcMain.on('form-submission', (e, data) => {
+  console.log(e);
+})
 
 app.whenReady().then(createWindow);
 
