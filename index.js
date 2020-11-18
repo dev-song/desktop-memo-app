@@ -10,9 +10,9 @@ function createWindow() {
     }
   });
 
-  const preMemo = readMemo(data => {
+  readMemo(memo => {
     win.webContents.on('did-finish-load', () => {
-      win.webContents.send('ping', data);
+      win.webContents.send('previous-memo-exists', memo);
     })
   });
 
