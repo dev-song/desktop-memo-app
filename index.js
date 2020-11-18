@@ -1,4 +1,5 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
+const { saveMemo, readMemo } = require('./lib/crud');
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -9,9 +10,19 @@ function createWindow() {
     }
   });
 
+  readMemo(memo => {
+    win.webContents.on('did-finish-load', () => {
+      win.webContents.send('previous-memo-exists', memo);
+    })
+  });
+
   win.loadFile('index.html');
   win.webContents.openDevTools();
 }
+
+ipcMain.on('form-submission', (e, data) => {
+  saveMemo(data);
+})
 
 app.whenReady().then(createWindow);
 
