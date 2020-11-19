@@ -2,16 +2,16 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
+    <title>Memo</title>
     <meta
       http-equiv="Content-Security-Policy"
       content="script-src 'self' 'unsafe-inline';"
     />
+    <link rel="stylesheet" href="styles.css" />
     <script defer src="renderer.js"></script>
   </head>
   <body>
-    <form class="memo--form" name="memoForm">
-      <label class="memo__label" for="memo">Memo</label>
+    <form class="memo--form">
       <textarea class="memo__input" name="memo"></textarea>
       <input class="memo__save" type="submit" value="저장" />
     </form>
