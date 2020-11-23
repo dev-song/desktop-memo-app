@@ -7,7 +7,8 @@ function createWindow() {
     height: 600,
     webPreferences: {
       nodeIntegration: true
-    }
+    },
+    frame: false
   });
 
   readMemo(memo => {
