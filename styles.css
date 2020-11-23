@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.memo--form {
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.memo__input {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+
+  background: coral;
+}
+
+.memo__save {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+}
